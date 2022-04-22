@@ -1,0 +1,281 @@
+@font-face 
+    src: url(fonts/montserratMedium.ttf)
+    font-family: 'Montserrat'
+    font-weight: 500
+    font-style: normal
+
+Montserrat(style, weight)
+    font-family: 'Montserrat'
+    font-weight: weight
+    font-style: style
+
+@font-face 
+    src: url(fonts/robotoReg.ttf)
+    font-family: 'Roboto'
+    font-weight: 400
+    font-style: normal
+
+@font-face 
+    src: url(fonts/robotoRegIt.ttf)
+    font-family: 'Roboto'
+    font-weight: 400
+    font-style: italic
+
+@font-face 
+    src: url(fonts/robotoLight.ttf)
+    font-family: 'Roboto'
+    font-weight: 300
+    font-style: normal
+
+@font-face 
+    src: url(fonts/robotoLightIt.ttf)
+    font-family: 'Roboto'
+    font-weight: 300
+    font-style: italic
+
+Roboto(style, weight)
+    font-family: 'Roboto'
+    font-weight: weight
+    font-style: style
+
+$textBlack = rgb(27 27 27)
+$brandYellow1 = hsl(46 95% 59%)
+$brandYellow2 = hsl(46 95% 42%)
+$textFaintGrey = rgb(180 180 180)
+$trans1 = cubic-bezier(0.69, 0, 0.56, 0.99)
+
+transOpacity0To1(dur, dynamics, delay)
+    transition-property: opacity
+    transition-duration: dur
+    transition-delay: delay
+    transition-timing-function: dynamics
+
+//--------------- defaulting all styles
+
+div 
+    margin-top: 0
+    margin-bottom: 0
+    padding-top: 0
+    padding-bottom: 0
+
+input:focus
+    outline: 0
+
+//--------------- common styles
+
+body
+    color: $textBlack
+    background-image: url(images/bg1.png), url(images/bg2.png)
+    background-position: right top, left top
+    background-size: 27%
+    background-repeat: repeat-y
+    cursor: default
+
+a.HrefCommon
+    text-decoration: none
+    color: $brandYellow2
+    cursor: pointer
+
+//--------------- components styles
+
+.App
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+
+.WhiteSpace
+    width: 100%
+
+.Title
+    position: relative
+    bottom: 0
+    margin-bottom: 32px
+    width: 100%
+    height: 40px
+    font-size: 26px
+    text-align: center
+    opacity: 1
+    transition-property: opacity, bottom
+    transition-duration: 3.5s
+    transition-delay: 1.2s
+    transition-timing-function: cubic-bezier(0.24, 0, 0.27, 1)
+    Montserrat(normal, 500)
+
+.TitleAnimate
+    bottom: 50px
+    opacity: 0
+    transition-property: opacity, bottom
+    transition-duration: 3.5s
+    transition-delay: 1.2s
+    transition-timing-function: cubic-bezier(0.24, 0, 0.27, 1)
+
+.CardsCont
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    width: 600px
+
+//--------------- SearchBar styles below
+
+.SearchBarCont
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: flex-start
+    margin-bottom: 50px
+    height: 42px
+
+.SearchBarInput
+    border: 2px solid $brandYellow1
+    height: 52px
+    box-sizing: border-box
+    font-size: 18px
+    text-align: center
+    Roboto(normal, 500)   
+
+.SearchBarInput::placeholder
+    color: $textFaintGrey
+
+ButtonDefault()
+    border-radius: 0px !important
+    width: 90px
+    height: 52px
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 12%) !important
+    font-weight: 600 !important
+    color: $textBlack !important 
+    background-color: $brandYellow1 !important
+
+.ButtonDefault
+    ButtonDefault()
+    
+.ButtonDefaultShavedLeft
+    ButtonDefault()
+    border-top-left-radius: 14px !important
+    border-bottom-left-radius: 14px !important
+
+.ButtonDefaultShavedRight
+    ButtonDefault()
+    border-top-right-radius: 14px !important
+    border-bottom-right-radius: 14px !important
+
+
+.SearchBarButton:hover
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 12%) !important
+
+
+//--------------- Card styles below
+
+.CardCont
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    margin-bottom: 48px
+    border-radius: 40px
+    width: 548px
+    box-shadow: 4px 4px 1.5px hsl(46 66% 33%)
+    background-color: $brandYellow1
+    opacity: 1
+    transOpacity0To1(1s, $trans1, 0.2s)
+
+.CardAnimateMount
+    opacity: 0
+    transOpacity0To1(1s, $trans1, 0.2s)
+
+.CardTitle
+    position: relative
+    margin-top: 20px
+    margin-bottom: 4px
+    width: 100%
+    font-size: 28px
+    text-align: center
+    Montserrat(normal, 500)
+
+.CardPropsCont
+    width: 64%
+
+.CardRow
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 9px
+    font-size: 20px
+    color: $textBlack
+    Roboto(normal, 500)
+
+.CardSplitLine
+    margin-top: 6px
+    margin-bottom: 10px
+    border-radius: 4px
+    width: 350px
+    height: 3px
+    background-color: #ccaa3e
+
+.CardPropLeft
+    font-weight: 600
+
+.CardRow:last-of-type
+    margin-bottom: 32px
+
+.CardButtonClose
+    position: absolute
+    left: 400px
+    top: 10px
+    width: 18px
+
+.CardLabel
+    Roboto(italic, 400)
+    margin-bottom: 8px
+    width: 100%
+    font-size: 20px
+    text-align: center
+    
+
+//--------------- Footer and ButtonUp styles below
+
+.FooterCont
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-around
+    margin-top: 28px
+    margin-bottom: 32px
+    width: 540px
+    height: 76px
+    Roboto(normal, 300)
+
+.ButtonUp
+    position: fixed
+    right: 494px
+    bottom: 44px
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    border-radius: 50px
+    width: 48px
+    height: 48px
+    background-color: $brandYellow1
+    opacity: 1
+    transition-property: opacity
+    transition-duration: 0.3s
+    transition-delay: 0s
+    transition-timing-function: $trans1
+
+.ButtonUpHidden
+    opacity: 0
+    transition-property: opacity
+    transition-duration: 0.3s
+    transition-delay: 0s
+    transition-timing-function: $trans1
+
+#ButtonUpArrow
+    width: 22px
+
+
+
+
+
