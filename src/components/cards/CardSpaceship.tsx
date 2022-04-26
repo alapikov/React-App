@@ -23,7 +23,7 @@ function CardSpaceship(data: CardSpaceshipProps) {
         document.title = ` ${globalData.numOfCards} cards now!`
     }, [])
 
-
+    // ** примечание 3 **
     return (
         <div className={classList}>
             <div className="CardPropsCont">

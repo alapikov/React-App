@@ -23,6 +23,7 @@ function CardPlanet(data: CardPlanetProps) {
         document.title = ` ${globalData.numOfCards} cards now!`
     }, [])
 
+    // ** примечание 3 **
     return (
         <div className={classList}>
             <div className="CardPropsCont">

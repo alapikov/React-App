@@ -23,6 +23,7 @@
 		"stylus/number-leading-zero": "always",
         "color-no-invalid-hex": true,
         "property-no-unknown": true,
+		"max-empty-lines": 1,
 		"color-named": "never",
 		"comment-no-empty": true,
 		"string-no-newline": true,

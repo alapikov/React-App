@@ -2,7 +2,7 @@ import React from "react";
 import Button from '@mui/material/Button'
 
 interface ButtonDefaultProps {
-    buttonName: string,
+    buttonName: string | number,
 
 }
 

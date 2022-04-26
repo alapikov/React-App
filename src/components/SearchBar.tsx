@@ -24,6 +24,7 @@ function SearchBar ({placeholder, inputWidth, buttonSearchName, buttonRandomName
 
     //--------------- functions for random event below
     // ** примечание 2 **
+    const [cardList, setCardList] = useState([]);
 
     const returnRandomData = (typeOfData, quantityIndex) => {
         function searchForRandomData() {
@@ -42,8 +43,6 @@ function SearchBar ({placeholder, inputWidth, buttonSearchName, buttonRandomName
         }  
         return searchForRandomData();
     };
-
-    const [cardList, setCardList] = useState([]);
 
     const mountRandomCard = () => {
         let typeOfData, quantityIndex;
@@ -178,7 +177,7 @@ function SearchBar ({placeholder, inputWidth, buttonSearchName, buttonRandomName
     };
 
     const mountSearchedCard = () => {
-        let card
+        let card;
         // @ts-ignore
         const inputText = document.querySelector('#SearchBarMain').value;
         returnSearchedData(inputText).then((response) => {

@@ -1,6 +1,6 @@
 {
   "name": "starwars",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "latest commit": "26.04.2022",
   "private": true,
   "dependencies": {

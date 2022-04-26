@@ -1,5 +1,8 @@
 https://swapi.dev
 
+stylus -w src/styles.styl -o src/styles.css
+npx stylelint "src/styles.styl" --fix
+
 number of characters - 83
 number of planets - 60
 number of spaceships - 17
@@ -8,3 +11,4 @@ number of spaceships - 17
 
 22.04.2022 - version 1.0.0 released
 26.04.2022 - v.1.0.1 - comments.txt added, comments deleted from logs.txt
+26.04.2022 - v.1.0.2 - all files are refactored, new rule added to stylelint and styles.styl linted

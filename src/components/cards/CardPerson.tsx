@@ -28,7 +28,6 @@ function CardPerson(data: CardPersonProps) {
     const [cardList, setCardList] = useState([]);
 
     // ** примечание 3 **
-    
     return (
         <div className={classList}>
             
