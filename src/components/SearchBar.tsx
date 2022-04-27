@@ -77,8 +77,6 @@ function SearchBar ({placeholder, inputWidth, buttonSearchName, buttonRandomName
             // ** примечание 5 **
             setCardList(cardList = cardList.unshift(card));
             // console.log('new card is rendered!')
-            globalData.numOfCards++
-            console.log('numOfCards now is: ' + globalData.numOfCards)
         })     
     }
 
@@ -194,8 +192,6 @@ function SearchBar ({placeholder, inputWidth, buttonSearchName, buttonRandomName
             // @ts-ignore
             setCardList(cardList = cardList.unshift(card));
             // console.log('rendered!')
-            globalData.numOfCards++
-            console.log('numOfCards now is: ' + globalData.numOfCards)
         })
 
     }

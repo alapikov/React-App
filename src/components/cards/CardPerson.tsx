@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 // @ts-ignore
 import {globalData} from './../../scripts.ts';
+// @ts-ignore
+import useEffectOnFirstRender from './../../customHooks/useEffectOnFirstRender.tsx'
 
 interface CardPersonProps {
     name: string,
@@ -17,12 +19,10 @@ interface CardPersonProps {
 function CardPerson(data: CardPersonProps) {
 
     let [classList, setClassList] = useState('CardCont CardAnimateMount');
-    
-    useEffect(() => {
+    useEffectOnFirstRender(() => {
         setClassList(classList = 'CardCont');
         globalData.numOfCards++;
         document.title = ` ${globalData.numOfCards} cards now!`;
-        
     }, [])
 
     const [cardList, setCardList] = useState([]);

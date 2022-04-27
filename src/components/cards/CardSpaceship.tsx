@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 // @ts-ignore
 import {globalData} from './../../scripts.ts';
+// @ts-ignore
+import useEffectOnFirstRender from './../../customHooks/useEffectOnFirstRender.tsx'
 
 interface CardSpaceshipProps {
     name: string,
@@ -17,11 +19,12 @@ interface CardSpaceshipProps {
 function CardSpaceship(data: CardSpaceshipProps) {
 
     let [classList, setClassList] = useState('CardCont CardAnimateMount');
-    useEffect(() => {
+    
+    useEffectOnFirstRender(() => {
         setClassList(classList = 'CardCont');
         globalData.numOfCards++;
-        document.title = ` ${globalData.numOfCards} cards now!`
-    }, [])
+        document.title = ` ${globalData.numOfCards} cards now!`;
+    }, []);
 
     // ** примечание 3 **
     return (
