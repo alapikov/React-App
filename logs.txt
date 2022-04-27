@@ -13,3 +13,4 @@ number of spaceships - 17
 26.04.2022 - v.1.0.1 - comments.txt added, comments deleted from logs.txt
 26.04.2022 - v.1.0.2 - all files are refactored, new rule added to stylelint and styles.styl linted
 27.04.2022 - v.1.0.3 - custom hook added and implemented into Cards components, though having no needed effect
+27.04.2022 - v.1.0.4 - color theme switch button added, styles variables changed

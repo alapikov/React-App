@@ -28,6 +28,18 @@
   font-weight: 300;
   font-style: italic;
 }
+:root {
+  --backgroundColor: #fff;
+  --textColor: #1b1b1b;
+  --brandColorLight: #facb33;
+  --brandColorDark: #d1a105;
+}
+[data-theme='dark'] {
+  --backgroundColor: #172334;
+  --textColor: #fff;
+  --brandColorLight: #3582ed;
+  --brandColorDark: #2259a7;
+}
 div {
   margin-top: 0;
   margin-bottom: 0;
@@ -38,7 +50,8 @@ input:focus {
   outline: 0;
 }
 body {
-  color: #1b1b1b;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
   background-image: url("images/bg1.png"), url("images/bg2.png");
   background-position: right top, left top;
   background-size: 27%;
@@ -47,7 +60,7 @@ body {
 }
 a.HrefCommon {
   text-decoration: none;
-  color: #d1a105;
+  color: var(--brandColorDark);
   cursor: pointer;
 }
 .App {
@@ -58,6 +71,14 @@ a.HrefCommon {
 }
 .WhiteSpace {
   width: 100%;
+}
+#HeaderBar {
+  width: 1000px;
+  height: 46px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 .Title {
   position: relative;
@@ -100,7 +121,7 @@ a.HrefCommon {
   height: 42px;
 }
 .SearchBarInput {
-  border: 2px solid #facb33;
+  border: 2px solid var(--brandColorLight);
   height: 52px;
   box-sizing: border-box;
   font-size: 18px;
@@ -118,8 +139,8 @@ a.HrefCommon {
   height: 52px;
   box-shadow: 0px 0px 0px 0px #000 !important;
   font-weight: 600 !important;
-  color: #1b1b1b !important;
-  background-color: #facb33 !important;
+  color: var(--textColor) !important;
+  background-color: var(--brandColorLight) !important;
 }
 .ButtonDefaultShavedLeft {
   border-radius: 0px !important;
@@ -127,8 +148,8 @@ a.HrefCommon {
   height: 52px;
   box-shadow: 0px 0px 0px 0px #000 !important;
   font-weight: 600 !important;
-  color: #1b1b1b !important;
-  background-color: #facb33 !important;
+  color: var(--textColor) !important;
+  background-color: var(--brandColorLight) !important;
   border-top-left-radius: 14px !important;
   border-bottom-left-radius: 14px !important;
 }
@@ -138,8 +159,8 @@ a.HrefCommon {
   height: 52px;
   box-shadow: 0px 0px 0px 0px #000 !important;
   font-weight: 600 !important;
-  color: #1b1b1b !important;
-  background-color: #facb33 !important;
+  color: var(--textColor) !important;
+  background-color: var(--brandColorLight) !important;
   border-top-right-radius: 14px !important;
   border-bottom-right-radius: 14px !important;
 }
@@ -155,7 +176,7 @@ a.HrefCommon {
   border-radius: 40px;
   width: 548px;
   box-shadow: 4px 4px 1.5px #8c721d;
-  background-color: #facb33;
+  background-color: var(--brandColorLight);
   opacity: 1;
   transition-property: opacity;
   transition-duration: 1s;
@@ -190,7 +211,7 @@ a.HrefCommon {
   justify-content: space-between;
   margin-bottom: 9px;
   font-size: 20px;
-  color: #1b1b1b;
+  color: var(--textColor);
   font-family: 'Roboto';
   font-weight: 500;
   font-style: normal;
@@ -248,7 +269,7 @@ a.HrefCommon {
   border-radius: 50px;
   width: 48px;
   height: 48px;
-  background-color: #facb33;
+  background-color: var(--brandColorLight);
   opacity: 1;
   transition-property: opacity;
   transition-duration: 0.3s;

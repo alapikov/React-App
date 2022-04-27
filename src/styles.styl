@@ -43,6 +43,21 @@ $brandYellow1 = hsl(46 95% 59%)
 $brandYellow2 = hsl(46 95% 42%)
 $textFaintGrey = rgb(180 180 180)
 $trans1 = cubic-bezier(0.69, 0, 0.56, 0.99)
+$backgroundDark = #172334
+$brandYellowDark1 = #3582ed
+$brandYellowDark2 = #2259a7
+
+:root
+    --backgroundColor: #fff
+    --textColor: rgb(27 27 27)
+    --brandColorLight: hsl(46 95% 59%)
+    --brandColorDark: hsl(46 95% 42%)
+
+[data-theme='dark']
+    --backgroundColor: #172334
+    --textColor: #fff
+    --brandColorLight: #3582ed
+    --brandColorDark: #2259a7
 
 transOpacity0To1(dur, dynamics, delay)
     transition-property: opacity
@@ -64,16 +79,17 @@ input:focus
 //--------------- common styles
 
 body
-    color: $textBlack
+    color: var(--textColor)
     background-image: url(images/bg1.png), url(images/bg2.png)
     background-position: right top, left top
     background-size: 27%
     background-repeat: repeat-y
+    background-color: var(--backgroundColor)
     cursor: default
 
 a.HrefCommon
     text-decoration: none
-    color: $brandYellow2
+    color: var(--brandColorDark)
     cursor: pointer
 
 //--------------- components styles
@@ -86,6 +102,14 @@ a.HrefCommon
 
 .WhiteSpace
     width: 100%
+
+#HeaderBar
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: flex-end
+    width: 1000px
+    height: 46px
 
 .Title
     position: relative
@@ -128,7 +152,7 @@ a.HrefCommon
     height: 42px
 
 .SearchBarInput
-    border: 2px solid $brandYellow1
+    border: 2px solid var(--brandColorLight)
     height: 52px
     box-sizing: border-box
     font-size: 18px
@@ -144,8 +168,8 @@ ButtonDefault()
     height: 52px
     box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 12%) !important
     font-weight: 600 !important
-    color: $textBlack !important
-    background-color: $brandYellow1 !important
+    color: var(--textColor) !important
+    background-color: var(--brandColorLight) !important
 
 .ButtonDefault
     ButtonDefault()
@@ -174,7 +198,7 @@ ButtonDefault()
     border-radius: 40px
     width: 548px
     box-shadow: 4px 4px 1.5px hsl(46 66% 33%)
-    background-color: $brandYellow1
+    background-color: var(--brandColorLight)
     opacity: 1
     transOpacity0To1(1s, $trans1, 0.2s)
 
@@ -201,7 +225,7 @@ ButtonDefault()
     justify-content: space-between
     margin-bottom: 9px
     font-size: 20px
-    color: $textBlack
+    color: var(--textColor)
     Roboto(normal, 500)
 
 .CardSplitLine
@@ -255,7 +279,7 @@ ButtonDefault()
     border-radius: 50px
     width: 48px
     height: 48px
-    background-color: $brandYellow1
+    background-color: var(--brandColorLight)
     opacity: 1
     transition-property: opacity
     transition-duration: 0.3s
