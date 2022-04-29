@@ -44,19 +44,21 @@ $brandYellow2 = hsl(46 95% 42%)
 $textFaintGrey = rgb(180 180 180)
 $trans1 = cubic-bezier(0.69, 0, 0.56, 0.99)
 $backgroundDark = #172334
-$brandYellowDark1 = #3582ed
+$brandYellowDark1 = #4e97ff
 $brandYellowDark2 = #2259a7
 
-:root
+[colorTheme = 'light']
     --backgroundColor: #fff
     --textColor: rgb(27 27 27)
+    --textFaint:rgb(167 167 167)
     --brandColorLight: hsl(46 95% 59%)
     --brandColorDark: hsl(46 95% 42%)
 
-[data-theme='dark']
+[colorTheme = 'dark']
     --backgroundColor: #172334
     --textColor: #fff
-    --brandColorLight: #3582ed
+    --textFaint:rgb(160 160 160)
+    --brandColorLight: #4e97ff
     --brandColorDark: #2259a7
 
 transOpacity0To1(dur, dynamics, delay)
@@ -66,6 +68,12 @@ transOpacity0To1(dur, dynamics, delay)
     transition-timing-function: dynamics
 
 //--------------- defaulting all styles
+
+// body
+//     width: 100%
+//     height: 100%
+//     margin: 0 auto
+//     padding: 0
 
 div 
     margin-top: 0
@@ -78,9 +86,11 @@ input:focus
 
 //--------------- common styles
 
-body
+#innerBody
+    width: 100%
+    min-height: 1220px
     color: var(--textColor)
-    background-image: url(images/bg1.png), url(images/bg2.png)
+    background-image: url(images/bg1Light.png), url(images/bg2Light.png)
     background-position: right top, left top
     background-size: 27%
     background-repeat: repeat-y
@@ -119,6 +129,7 @@ a.HrefCommon
     height: 40px
     font-size: 26px
     text-align: center
+    color: var(--textColor)
     opacity: 1
     transition-property: opacity, bottom
     transition-duration: 3.5s
@@ -158,9 +169,11 @@ a.HrefCommon
     font-size: 18px
     text-align: center
     Roboto(normal, 500)   
+    color: var(--textColor)
+    background-color: var(--backgroundColor)
 
 .SearchBarInput::placeholder
-    color: $textFaintGrey
+    color: var(--textFaint)
 
 ButtonDefault()
     border-radius: 0px !important
@@ -214,6 +227,7 @@ ButtonDefault()
     font-size: 28px
     text-align: center
     Montserrat(normal, 500)
+    color: var(--textColor)
 
 .CardPropsCont
     width: 64%
@@ -234,7 +248,7 @@ ButtonDefault()
     border-radius: 4px
     width: 350px
     height: 3px
-    background-color: #ccaa3e
+    background-color: var(--brandColorDark)
 
 .CardPropLeft
     font-weight: 600
@@ -254,6 +268,7 @@ ButtonDefault()
     width: 100%
     font-size: 20px
     text-align: center
+    color: var(--textColor)
 
 //--------------- Footer and ButtonUp styles below
 
@@ -267,6 +282,7 @@ ButtonDefault()
     width: 540px
     height: 76px
     Roboto(normal, 300)
+    color: var(--textColor)
 
 .ButtonUp
     position: fixed

@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import Switch, {SwitchProps} from '@mui/material/Switch';
 import {styled} from '@mui/material/styles';
+//@ts-ignore
+import {ColorThemeContext} from './../../scripts.ts';
 
 const CompSwitchTheme = styled(Switch)<SwitchProps>(({theme}) => ({
     width: 70,
@@ -36,17 +38,26 @@ const CompSwitchTheme = styled(Switch)<SwitchProps>(({theme}) => ({
 
 const ButtonSwitchTheme = () => {
 
-    let colorFlag = 'light';
-
-    // function changeColorTheme() {
-    //     if (colorFlag === 'light') {
-
-    //     }
-    // }
+    let {colorTheme, setColorTheme} = useContext(ColorThemeContext);
+    
+    function switchColorTheme() {
+        // console.log(colorTheme)
+        //@ts-ignore
+        let backgroundImage = document.querySelector('#innerBody').style.backgroundImage
+        if (colorTheme === 'light') {
+            backgroundImage = 'url(images/bg1Dark.png), url(images/bg2Dark.png)';
+            setColorTheme('dark');
+        }
+        if (colorTheme === 'dark') {
+            backgroundImage = 'url(images/bg1Light.png), url(images/bg2Light.png)';
+            setColorTheme('light');
+        }
+        
+    }
 
     return (
         <div className="ButtonSwitchThemeCont">
-            <CompSwitchTheme />
+            <CompSwitchTheme onClick={switchColorTheme}/>
         </div>
     );
 }

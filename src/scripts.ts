@@ -1,3 +1,5 @@
+import React from "react";
+
 export const globalData = {
     numOfCards: 0,
 }
@@ -8,3 +10,6 @@ export function scrollToTop() {
         behavior: "smooth"
     });
 }
+
+//@ts-ignore
+export const ColorThemeContext = React.createContext();

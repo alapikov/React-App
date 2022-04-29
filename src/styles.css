@@ -28,16 +28,18 @@
   font-weight: 300;
   font-style: italic;
 }
-:root {
+[colorTheme = 'light'] {
   --backgroundColor: #fff;
   --textColor: #1b1b1b;
+  --textFaint: #a7a7a7;
   --brandColorLight: #facb33;
   --brandColorDark: #d1a105;
 }
-[data-theme='dark'] {
+[colorTheme = 'dark'] {
   --backgroundColor: #172334;
   --textColor: #fff;
-  --brandColorLight: #3582ed;
+  --textFaint: #a0a0a0;
+  --brandColorLight: #4e97ff;
   --brandColorDark: #2259a7;
 }
 div {
@@ -49,13 +51,15 @@ div {
 input:focus {
   outline: 0;
 }
-body {
+#innerBody {
+  width: 100%;
+  min-height: 1220px;
   color: var(--textColor);
-  background-color: var(--backgroundColor);
-  background-image: url("images/bg1.png"), url("images/bg2.png");
+  background-image: url("images/bg1Light.png"), url("images/bg2Light.png");
   background-position: right top, left top;
   background-size: 27%;
   background-repeat: repeat-y;
+  background-color: var(--backgroundColor);
   cursor: default;
 }
 a.HrefCommon {
@@ -73,12 +77,12 @@ a.HrefCommon {
   width: 100%;
 }
 #HeaderBar {
-  width: 1000px;
-  height: 46px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
+  width: 1000px;
+  height: 46px;
 }
 .Title {
   position: relative;
@@ -88,6 +92,7 @@ a.HrefCommon {
   height: 40px;
   font-size: 26px;
   text-align: center;
+  color: var(--textColor);
   opacity: 1;
   transition-property: opacity, bottom;
   transition-duration: 3.5s;
@@ -129,9 +134,11 @@ a.HrefCommon {
   font-family: 'Roboto';
   font-weight: 500;
   font-style: normal;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
 }
 .SearchBarInput::placeholder {
-  color: #b4b4b4;
+  color: var(--textFaint);
 }
 .ButtonDefault {
   border-radius: 0px !important;
@@ -200,6 +207,7 @@ a.HrefCommon {
   font-family: 'Montserrat';
   font-weight: 500;
   font-style: normal;
+  color: var(--textColor);
 }
 .CardPropsCont {
   width: 64%;
@@ -222,7 +230,7 @@ a.HrefCommon {
   border-radius: 4px;
   width: 350px;
   height: 3px;
-  background-color: #ccaa3e;
+  background-color: var(--brandColorDark);
 }
 .CardPropLeft {
   font-weight: 600;
@@ -244,6 +252,7 @@ a.HrefCommon {
   width: 100%;
   font-size: 20px;
   text-align: center;
+  color: var(--textColor);
 }
 .FooterCont {
   display: flex;
@@ -257,6 +266,7 @@ a.HrefCommon {
   font-family: 'Roboto';
   font-weight: 300;
   font-style: normal;
+  color: var(--textColor);
 }
 .ButtonUp {
   position: fixed;
