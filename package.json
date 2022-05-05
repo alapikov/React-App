@@ -1,7 +1,7 @@
 {
   "name": "starwars",
-  "version": "1.1.0",
-  "latest commit": "29.04.2022",
+  "version": "1.1.1",
+  "latest commit": "05.05.2022",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",

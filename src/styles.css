@@ -34,13 +34,27 @@
   --textFaint: #a7a7a7;
   --brandColorLight: #facb33;
   --brandColorDark: #d1a105;
+  --buttonClose: url("./../public/images/buttonCloseLight.svg");
+  --buttonUp: url("./../public/images/buttonUpLight.svg");
+  --cardShadow: 4px 4px 1.5px #8c721d;
+  --backgroundImage: url("images/bg1Light.png"), url("images/bg2Light.png");
 }
 [colorTheme = 'dark'] {
-  --backgroundColor: #172334;
+  --backgroundColor: #101823;
   --textColor: #fff;
   --textFaint: #a0a0a0;
-  --brandColorLight: #4e97ff;
-  --brandColorDark: #2259a7;
+  --brandColorLight: #4582de;
+  --brandColorDark: #2259a5;
+  --buttonClose: url("./../public/images/buttonCloseDark.svg");
+  --buttonUp: url("./../public/images/buttonUpDark.svg");
+  --cardShadow: 4px 4px 1.5px #c7deff;
+  --backgroundImage: url("images/bg1Dark.png"), url("images/bg2Dark.png");
+}
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 div {
   margin-top: 0;
@@ -55,7 +69,7 @@ input:focus {
   width: 100%;
   min-height: 1220px;
   color: var(--textColor);
-  background-image: url("images/bg1Light.png"), url("images/bg2Light.png");
+  background-image: var(--backgroundImage);
   background-position: right top, left top;
   background-size: 27%;
   background-repeat: repeat-y;
@@ -148,6 +162,7 @@ a.HrefCommon {
   font-weight: 600 !important;
   color: var(--textColor) !important;
   background-color: var(--brandColorLight) !important;
+  transition: none !important;
 }
 .ButtonDefaultShavedLeft {
   border-radius: 0px !important;
@@ -157,6 +172,7 @@ a.HrefCommon {
   font-weight: 600 !important;
   color: var(--textColor) !important;
   background-color: var(--brandColorLight) !important;
+  transition: none !important;
   border-top-left-radius: 14px !important;
   border-bottom-left-radius: 14px !important;
 }
@@ -168,6 +184,7 @@ a.HrefCommon {
   font-weight: 600 !important;
   color: var(--textColor) !important;
   background-color: var(--brandColorLight) !important;
+  transition: none !important;
   border-top-right-radius: 14px !important;
   border-bottom-right-radius: 14px !important;
 }
@@ -182,7 +199,7 @@ a.HrefCommon {
   margin-bottom: 48px;
   border-radius: 40px;
   width: 548px;
-  box-shadow: 4px 4px 1.5px #8c721d;
+  box-shadow: var(--cardShadow);
   background-color: var(--brandColorLight);
   opacity: 1;
   transition-property: opacity;
@@ -242,7 +259,9 @@ a.HrefCommon {
   position: absolute;
   left: 400px;
   top: 10px;
-  width: 18px;
+  width: 22px;
+  height: 22px;
+  background-image: var(--buttonClose);
 }
 .CardLabel {
   font-family: 'Roboto';
@@ -295,4 +314,6 @@ a.HrefCommon {
 }
 #ButtonUpArrow {
   width: 22px;
+  height: 13px;
+  background-image: var(--buttonUp);
 }

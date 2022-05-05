@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
 //@ts-ignore
-import ButtonSwitchTheme from "./buttons/ButtonSwitchTheme.tsx";
+import ButtonSwitchTheme from './buttons/ButtonSwitchTheme.tsx';
 
 function HeaderBar() {
-    return (
-        <div className="HeaderBar" id="HeaderBar">
-            <ButtonSwitchTheme />
-            
-        </div>
-    );
+	return (
+		<div className='HeaderBar' id='HeaderBar'>
+			<ButtonSwitchTheme />
+		</div>
+	);
 }
 
 export default HeaderBar;

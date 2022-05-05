@@ -9,6 +9,10 @@ number of characters - 83
 number of planets - 60
 number of spaceships - 17
 
+//------------ to do:
+
+- correct border line around button close image
+
 //------------ logs:
 
 22.04.2022 - version 1.0.0 released
@@ -17,3 +21,4 @@ number of spaceships - 17
 27.04.2022 - v.1.0.3 - custom hook added and implemented into Cards components, though having no needed effect
 27.04.2022 - v.1.0.4 - color theme switch button added, styles variables changed
 29.04.2022 - v.1.1.0 - color theme switch binded, theme switch works, code refactored
+05.05.2022 - v.1.1.1 - color theme fully implemented, tested, prettier configured, all files are formatted with prettier

@@ -1,22 +1,21 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 
 interface TitleProps {
-    title: string
+	title: string;
 }
 
-const Title = ({title}: TitleProps) => {
+const Title = ({ title }: TitleProps) => {
+	let [classList, setClassList] = useState('Title TitleAnimate');
 
-    let [classList, setClassList] = useState('Title TitleAnimate');
-    
-    useEffect(() => {
-        setClassList(classList = 'Title');        
-    }, [])
+	useEffect(() => {
+		setClassList((classList = 'Title'));
+	}, []);
 
-    return (
-        <div id='Title' className={classList}>
-            {title}
-        </div>
-    );
-}
+	return (
+		<div id='Title' className={classList}>
+			{title}
+		</div>
+	);
+};
 
 export default Title;

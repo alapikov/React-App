@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
 export const globalData = {
-    numOfCards: 0,
-}
+	numOfCards: 0,
+};
 
 export function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
 }
 
 //@ts-ignore

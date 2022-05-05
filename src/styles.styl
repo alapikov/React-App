@@ -53,13 +53,21 @@ $brandYellowDark2 = #2259a7
     --textFaint:rgb(167 167 167)
     --brandColorLight: hsl(46 95% 59%)
     --brandColorDark: hsl(46 95% 42%)
+    --buttonClose: url(./../public/images/buttonCloseLight.svg)
+    --buttonUp: url(./../public/images/buttonUpLight.svg)
+    --cardShadow: 4px 4px 1.5px hsl(46 66% 33%)
+    --backgroundImage: url(images/bg1Light.png), url(images/bg2Light.png)
 
 [colorTheme = 'dark']
-    --backgroundColor: #172334
+    --backgroundColor: hsl(215 37% 10%)
     --textColor: #fff
-    --textFaint:rgb(160 160 160)
-    --brandColorLight: #4e97ff
-    --brandColorDark: #2259a7
+    --textFaint: rgb(160 160 160)
+    --brandColorLight: hsl(216 70% 57%)
+    --brandColorDark: hsl(215 66% 39%)
+    --buttonClose: url(./../public/images/buttonCloseDark.svg)
+    --buttonUp: url(./../public/images/buttonUpDark.svg)
+    --cardShadow: 4px 4px 1.5px hsl(215 100% 89%)
+    --backgroundImage: url(images/bg1Dark.png), url(images/bg2Dark.png)
 
 transOpacity0To1(dur, dynamics, delay)
     transition-property: opacity
@@ -69,11 +77,11 @@ transOpacity0To1(dur, dynamics, delay)
 
 //--------------- defaulting all styles
 
-// body
-//     width: 100%
-//     height: 100%
-//     margin: 0 auto
-//     padding: 0
+body
+    margin: 0 auto
+    padding: 0
+    width: 100%
+    height: 100%
 
 div 
     margin-top: 0
@@ -90,7 +98,7 @@ input:focus
     width: 100%
     min-height: 1220px
     color: var(--textColor)
-    background-image: url(images/bg1Light.png), url(images/bg2Light.png)
+    background-image: var(--backgroundImage)
     background-position: right top, left top
     background-size: 27%
     background-repeat: repeat-y
@@ -183,7 +191,8 @@ ButtonDefault()
     font-weight: 600 !important
     color: var(--textColor) !important
     background-color: var(--brandColorLight) !important
-
+    transition: none !important
+    
 .ButtonDefault
     ButtonDefault()
 
@@ -210,7 +219,7 @@ ButtonDefault()
     margin-bottom: 48px
     border-radius: 40px
     width: 548px
-    box-shadow: 4px 4px 1.5px hsl(46 66% 33%)
+    box-shadow: var(--cardShadow)
     background-color: var(--brandColorLight)
     opacity: 1
     transOpacity0To1(1s, $trans1, 0.2s)
@@ -260,7 +269,9 @@ ButtonDefault()
     position: absolute
     left: 400px
     top: 10px
-    width: 18px
+    width: 22px
+    height: 22px
+    background-image: var(--buttonClose)
 
 .CardLabel
     Roboto(italic, 400)
@@ -311,3 +322,5 @@ ButtonDefault()
 
 #ButtonUpArrow
     width: 22px
+    height: 13px
+    background-image: var(--buttonUp)

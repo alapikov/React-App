@@ -1,16 +1,17 @@
-import React from "react";
-import Button from '@mui/material/Button'
+import React from 'react';
+import Button from '@mui/material/Button';
 
 interface ButtonDefaultProps {
-    buttonName: string | number,
-
+	buttonName: string | number;
 }
 
-function ButtonDefault({buttonName}: ButtonDefaultProps) {
-    return (
-        // ** примечание 1 **
-        <Button className="ButtonDefault" type='button' variant='contained'>{buttonName}</Button>
-    );
+function ButtonDefault({ buttonName }: ButtonDefaultProps) {
+	return (
+		// ** примечание 1 **
+		<Button className='ButtonDefault' type='button' variant='contained'>
+			{buttonName}
+		</Button>
+	);
 }
 
 export default ButtonDefault;

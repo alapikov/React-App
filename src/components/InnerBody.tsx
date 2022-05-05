@@ -1,10 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const InnerBody = () => {
-    return (
-        <div id="innerBody">
-        </div>
-    );
-}
+	return <div id='innerBody'></div>;
+};
 
 export default InnerBody;

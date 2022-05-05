@@ -1,16 +1,17 @@
-import React from "react";
-import Button from '@mui/material/Button'
+import React from 'react';
+import Button from '@mui/material/Button';
 
 interface ButtonDefaultShavedLeftProps {
-    buttonName: string | number,
-
+	buttonName: string | number;
 }
 
-function ButtonDefaultShavedLeft({buttonName}: ButtonDefaultShavedLeftProps) {
-    return (
-        // ** примечание 1 **
-        <Button className="ButtonDefaultShavedLeft" type='button' variant='contained'>{buttonName}</Button>
-    );
+function ButtonDefaultShavedLeft({ buttonName }: ButtonDefaultShavedLeftProps) {
+	return (
+		// ** примечание 1 **
+		<Button className='ButtonDefaultShavedLeft' type='button' variant='contained'>
+			{buttonName}
+		</Button>
+	);
 }
 
 export default ButtonDefaultShavedLeft;

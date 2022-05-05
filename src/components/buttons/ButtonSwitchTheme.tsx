@@ -43,13 +43,10 @@ const ButtonSwitchTheme = () => {
     function switchColorTheme() {
         // console.log(colorTheme)
         //@ts-ignore
-        let backgroundImage = document.querySelector('#innerBody').style.backgroundImage
         if (colorTheme === 'light') {
-            backgroundImage = 'url(images/bg1Dark.png), url(images/bg2Dark.png)';
             setColorTheme('dark');
         }
         if (colorTheme === 'dark') {
-            backgroundImage = 'url(images/bg1Light.png), url(images/bg2Light.png)';
             setColorTheme('light');
         }
         
