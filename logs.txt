@@ -22,3 +22,5 @@ number of spaceships - 17
 27.04.2022 - v.1.0.4 - color theme switch button added, styles variables changed
 29.04.2022 - v.1.1.0 - color theme switch binded, theme switch works, code refactored
 05.05.2022 - v.1.1.1 - color theme fully implemented, tested, prettier configured, all files are formatted with prettier
+06.06.2022 - v.1.1.2 - a flaw with background image fixed
+10.05.2022 - v.1.1.3 - Title now changes text color on click

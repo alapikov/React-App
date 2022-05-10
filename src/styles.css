@@ -1,8 +1,8 @@
 @font-face {
-  src: url("fonts/montserratMedium.ttf");
-  font-family: 'Montserrat';
-  font-weight: 500;
-  font-style: normal;
+  src: url("fonts/robotoRegIt.ttf");
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: italic;
 }
 @font-face {
   src: url("fonts/robotoReg.ttf");
@@ -11,10 +11,10 @@
   font-style: normal;
 }
 @font-face {
-  src: url("fonts/robotoRegIt.ttf");
-  font-family: 'Roboto';
-  font-weight: 400;
-  font-style: italic;
+  src: url("fonts/montserratMedium.ttf");
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
 }
 @font-face {
   src: url("fonts/robotoLight.ttf");
@@ -115,6 +115,9 @@ a.HrefCommon {
   font-family: 'Montserrat';
   font-weight: 500;
   font-style: normal;
+}
+.colored {
+  color: var(--brandColorLight);
 }
 .TitleAnimate {
   bottom: 50px;

@@ -1,13 +1,8 @@
 @font-face 
-    src: url(fonts/montserratMedium.ttf)
-    font-family: 'Montserrat'
-    font-weight: 500
-    font-style: normal
-
-Montserrat(style, weight)
-    font-family: 'Montserrat'
-    font-weight: weight
-    font-style: style
+    src: url(fonts/robotoRegIt.ttf)
+    font-family: 'Roboto'
+    font-weight: 400
+    font-style: italic
 
 @font-face 
     src: url(fonts/robotoReg.ttf)
@@ -16,10 +11,10 @@ Montserrat(style, weight)
     font-style: normal
 
 @font-face 
-    src: url(fonts/robotoRegIt.ttf)
-    font-family: 'Roboto'
-    font-weight: 400
-    font-style: italic
+    src: url(fonts/montserratMedium.ttf)
+    font-family: 'Montserrat'
+    font-weight: 500
+    font-style: normal  
 
 @font-face 
     src: url(fonts/robotoLight.ttf)
@@ -38,10 +33,15 @@ Roboto(style, weight)
     font-weight: weight
     font-style: style
 
-$textBlack = rgb(27 27 27)
-$brandYellow1 = hsl(46 95% 59%)
-$brandYellow2 = hsl(46 95% 42%)
-$textFaintGrey = rgb(180 180 180)
+Montserrat(style, weight)
+    font-family: 'Montserrat'
+    font-weight: weight
+    font-style: style
+
+$textBlack = rgb(27, 27, 27)
+$brandYellow1 = hsl(46, 95%, 59%)
+$brandYellow2 = hsl(46, 95%, 42%)
+$textFaintGrey = rgb(180, 180, 180)
 $trans1 = cubic-bezier(0.69, 0, 0.56, 0.99)
 $backgroundDark = #172334
 $brandYellowDark1 = #4e97ff
@@ -49,24 +49,24 @@ $brandYellowDark2 = #2259a7
 
 [colorTheme = 'light']
     --backgroundColor: #fff
-    --textColor: rgb(27 27 27)
-    --textFaint:rgb(167 167 167)
-    --brandColorLight: hsl(46 95% 59%)
-    --brandColorDark: hsl(46 95% 42%)
+    --textColor: rgb(27, 27, 27)
+    --textFaint: rgb(167, 167, 167)
+    --brandColorLight: hsl(46, 95%, 59%)
+    --brandColorDark: hsl(46, 95%, 42%)
     --buttonClose: url(./../public/images/buttonCloseLight.svg)
     --buttonUp: url(./../public/images/buttonUpLight.svg)
-    --cardShadow: 4px 4px 1.5px hsl(46 66% 33%)
+    --cardShadow: 4px 4px 1.5px hsl(46, 66%, 33%)
     --backgroundImage: url(images/bg1Light.png), url(images/bg2Light.png)
 
 [colorTheme = 'dark']
-    --backgroundColor: hsl(215 37% 10%)
+    --backgroundColor: hsl(215, 37%, 10%)
     --textColor: #fff
-    --textFaint: rgb(160 160 160)
-    --brandColorLight: hsl(216 70% 57%)
-    --brandColorDark: hsl(215 66% 39%)
+    --textFaint: rgb(160, 160, 160)
+    --brandColorLight: hsl(216, 70%, 57%)
+    --brandColorDark: hsl(215, 66%, 39%)
     --buttonClose: url(./../public/images/buttonCloseDark.svg)
     --buttonUp: url(./../public/images/buttonUpDark.svg)
-    --cardShadow: 4px 4px 1.5px hsl(215 100% 89%)
+    --cardShadow: 4px 4px 1.5px hsl(215, 100%, 89%)
     --backgroundImage: url(images/bg1Dark.png), url(images/bg2Dark.png)
 
 transOpacity0To1(dur, dynamics, delay)
@@ -145,6 +145,9 @@ a.HrefCommon
     transition-timing-function: cubic-bezier(0.24, 0, 0.27, 1)
     Montserrat(normal, 500)
 
+.colored
+    color: var(--brandColorLight)
+
 .TitleAnimate
     bottom: 50px
     opacity: 0
@@ -187,7 +190,7 @@ ButtonDefault()
     border-radius: 0px !important
     width: 90px
     height: 52px
-    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 12%) !important
+    box-shadow: 0px 0px 0px 0px rgb(0, 0, 0 / 12%) !important
     font-weight: 600 !important
     color: var(--textColor) !important
     background-color: var(--brandColorLight) !important
@@ -207,7 +210,7 @@ ButtonDefault()
     border-bottom-right-radius: 14px !important
 
 .SearchBarButton:hover
-    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 12%) !important
+    box-shadow: 0px 0px 0px 0px rgb(0, 0, 0 / 12%) !important
 
 //--------------- Card styles below
 

@@ -27,7 +27,7 @@
 		"color-named": "never",
 		"comment-no-empty": true,
 		"string-no-newline": true,
-		"color-function-notation": "modern",
+		"color-function-notation": "legacy",
 		"plugin-color/color-types": {
 			"mode": "require",
 			"types": ["hsl", "hex", "rgb"]
