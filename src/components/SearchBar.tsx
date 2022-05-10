@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-// @ts-ignore
 import ButtonDefaultShavedLeft from './buttons/ButtonDefaultShavedLeft.tsx';
-// @ts-ignore
 import ButtonDefaultShavedRight from './buttons/ButtonDefaultShavedRight.tsx';
-// @ts-ignore
 import CardPerson from './cards/CardPerson.tsx';
-// @ts-ignore
 import CardPlanet from './cards/CardPlanet.tsx';
-// @ts-ignore
 import CardSpaceship from './cards/CardSpaceship.tsx';
-// @ts-ignore
-import { globalData } from './../scripts.ts';
+import { globalData, returnRandomData, returnSearchedData, cardFlag } from './../scripts.ts';
 
 interface SearchBarProps {
 	placeholder: string;
@@ -21,30 +15,13 @@ interface SearchBarProps {
 }
 
 function SearchBar({ placeholder, inputWidth, buttonSearchName, buttonRandomName }: SearchBarProps) {
+
 	//--------------- functions for random event below
 	// ** примечание 2 **
 	const [cardList, setCardList] = useState([]);
 
-	const returnRandomData = (typeOfData, quantityIndex) => {
-		function searchForRandomData() {
-			let addressIndex = Math.floor(Math.random() * quantityIndex + 1);
-			const httpRequest = `https://swapi.dev/api/${typeOfData}/${addressIndex}/`;
-			return fetch(httpRequest, { headers: { Accept: 'application/json' } })
-				.then((response) => {
-					if (!response.ok) {
-						return searchForRandomData();
-					}
-					return response.json();
-				})
-				.then((response) => {
-					return response;
-				});
-		}
-		return searchForRandomData();
-	};
-
 	const mountRandomCard = () => {
-		let typeOfData, quantityIndex;
+		let typeOfData: string, quantityIndex: number;
 		let typeIndex = Math.floor(Math.random() * 3 + 1);
 		if (typeIndex === 1) {
 			typeOfData = 'people';
@@ -80,95 +57,6 @@ function SearchBar({ placeholder, inputWidth, buttonSearchName, buttonRandomName
 	};
 
 	//--------------- functions for search event below
-
-	let cardFlag = 'person';
-
-	const returnSearchedData = (inputText) => {
-		let addressIndex = 1;
-
-		function searchForPerson() {
-			const httpRequest = `https://swapi.dev/api/people/${addressIndex}/`;
-			return fetch(httpRequest, { headers: { Accept: 'application/json' } })
-				.then((response) => {
-					if (!response.ok && addressIndex <= 83) {
-						addressIndex++;
-						return searchForPerson();
-					} else if (!response.ok && addressIndex >= 83) {
-						addressIndex = 1;
-						cardFlag = 'planet';
-						return searchForPlanet();
-					}
-					return response.json();
-				})
-				.then((response) => {
-					if (response.name.toLowerCase() === inputText.toLowerCase()) {
-						return response;
-					} else if (addressIndex <= 83) {
-						addressIndex++;
-						// console.log('not found in people, looking further...')
-						return searchForPerson();
-					} else {
-						// console.log('not found!')
-						return { name: 'data not found!' };
-					}
-				});
-		}
-
-		function searchForPlanet() {
-			const httpRequest = `https://swapi.dev/api/planets/${addressIndex}/`;
-			return fetch(httpRequest, { headers: { Accept: 'application/json' } })
-				.then((response) => {
-					if (!response.ok && addressIndex <= 60) {
-						addressIndex++;
-						return searchForPlanet();
-					} else if (!response.ok && addressIndex >= 60) {
-						addressIndex = 1;
-						cardFlag = 'spaceship';
-						return searchForSpaceship();
-					}
-					return response.json();
-				})
-				.then((response) => {
-					if (response.name.toLowerCase() === inputText.toLowerCase()) {
-						return response;
-					} else if (addressIndex <= 60) {
-						addressIndex++;
-						// console.log('not found in planets, looking further...')
-						return searchForPlanet();
-					} else {
-						// console.log('not found!')
-						return { name: 'data not found!' };
-					}
-				});
-		}
-
-		function searchForSpaceship() {
-			const httpRequest = `https://swapi.dev/api/starships/${addressIndex}/`;
-			return fetch(httpRequest, { headers: { Accept: 'application/json' } })
-				.then((response) => {
-					if (!response.ok && addressIndex <= 17) {
-						addressIndex++;
-						return searchForSpaceship();
-					} else if (!response.ok && addressIndex >= 17) {
-						return { name: 'data not found!' };
-					}
-					return response.json();
-				})
-				.then((response) => {
-					if (response.name.toLowerCase() === inputText.toLowerCase()) {
-						return response;
-					} else if (addressIndex <= 17) {
-						addressIndex++;
-						// console.log('not found in spaceships, looking further...')
-						return searchForSpaceship();
-					} else {
-						// console.log('no such data in database!')
-						return { name: 'data not found!' };
-					}
-				});
-		}
-		return searchForPerson();
-	};
 
 	const mountSearchedCard = () => {
 		let card;

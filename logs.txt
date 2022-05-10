@@ -11,7 +11,8 @@ number of spaceships - 17
 
 //------------ to do:
 
-- correct border line around button close image
+- make close button work
+- correct counter count
 
 //------------ logs:
 
@@ -24,3 +25,4 @@ number of spaceships - 17
 05.05.2022 - v.1.1.1 - color theme fully implemented, tested, prettier configured, all files are formatted with prettier
 06.06.2022 - v.1.1.2 - a flaw with background image fixed
 10.05.2022 - v.1.1.3 - Title now changes text color on click
+__.05.2022 - v.1.1.4 - icon.png is set, close button border line bag fixed, little refactoring, search functions from SearchBar.tsx are exported to scripts.ts
